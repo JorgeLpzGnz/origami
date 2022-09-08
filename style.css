@@ -1,0 +1,275 @@
+:root {
+    -animationDuration: 0.5;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.father {
+    width: 188px;
+    height: 225px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.father div {
+    border:  .1px solid #fff;
+}
+
+.d1 {
+    width: 17%;
+    height: 7.5%;
+    background: rgb(255, 255, 255);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.father:hover .d1{
+    animation: desaparecer 0.1s 1 forwards;
+    animation-delay: 0.4s;
+}
+
+.d2 {
+    width: 17%;
+    height: 30%;
+    background: #272727;
+    position: absolute;
+    bottom: 0;
+}
+
+.father:hover .d2{
+    animation: cambiarColor 0.1s 1 forwards;
+    animation-delay: 0.4s;
+}
+
+.d2::before {
+    content: '';
+    height: 100%;
+    width: 244.117%;
+    position: absolute;
+    background: #000;
+    right: 101%;
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
+    transition: clip-path 1s;
+}
+
+.d2::after {
+    content: '';
+    height: 100%;
+    width: 244.117%;
+    position: absolute;
+    background: #000;
+    left: 101%;
+    clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+    transition: clip-path 1s ;
+}
+
+.father:hover .d2::before {
+    animation: transforCournerB 1 0.2s forwards;
+    animation-delay: 0.4s;
+}
+
+.father:hover .d2::after {
+    animation: transforCournerA 1 0.2s forwards;
+    animation-delay: 0.4s;
+}
+
+.d3 {
+    width: 60%;
+    height: 60%;
+    background: #000;
+    position: absolute;
+    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+    bottom: 30%;
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    transform: rotate3d( 1, 0, 0, 120deg );
+    z-index: -1;
+}
+
+.father:hover .d3 {
+    animation: rotarHaciaAbajo90n 1 0.2s forwards;
+    animation-delay: 0.4s;
+}
+
+/* triangulos del medio */
+
+.d4 {
+    width: 41.5%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    bottom: 30%;
+    background: #000;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    transform-origin: center bottom;
+}
+
+.father:hover .d4 {
+    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0.2s, 0.4s;
+}
+
+.d6 {
+    width: 41.5%;
+    height: 30%;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    background: #000;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transform-origin: center bottom;
+}
+
+.father:hover .d6 {
+    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0.2s, 0.4s;
+}
+
+/* cuadrados del medio */
+
+.d5 {
+    height: 30%;
+    width: 20.75%;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    background: #272727;
+    left: 0;
+    z-index: -1;
+    transition: all 1s;
+    animation: delay 1s;
+    transform-origin: center bottom;
+}
+
+.father:hover .d5 {
+    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0.2s, 0.4s;
+}
+
+.d7 {
+    height: 30%;
+    width: 20.75%;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    background: #272727;
+    right: 0;
+    z-index: -1;
+    transform-origin: center bottom;
+}
+
+.father:hover .d7 {
+    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0.2s, 0.4s;
+}
+
+/* triangulos superiores */
+
+.d5::after {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    transition: clip-path 1s ;
+    bottom: 100%;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transition: all 0.5s;
+    transform-origin: center bottom;
+}
+
+.father:hover .d5::after {
+    animation: rotarHaciaAbajo180 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0s, 0.4s;
+}
+
+.d7::after {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    clip-path: polygon(0 50%, 0 0, 100% 100%, 0% 100%);
+    transition: clip-path 1s ;
+    bottom: 100%;
+    right: 0;
+    transform-origin: center bottom;
+}
+
+.father:hover .d7::after {
+    animation: rotarHaciaAbajo180 0.2s forwards, desaparecer 0.2s forwards;
+    animation-delay: 0s, 0.4s;
+}
+
+/* animaciones */
+
+@keyframes transforCournerA {
+    100% {
+        clip-path: polygon(0 0, 52% 0, 100% 100%, 0% 100%);
+        border: none;
+        left: 100%;
+    }
+}
+
+@keyframes transforCournerB {
+    100% {
+        clip-path: polygon(48% 0, 100% 0, 100% 100%, 0% 100%);
+        border: none;
+        right: 99.5%;
+    }
+}
+
+@keyframes rotarHaciaAbajo90 {
+    100%{
+        transform: rotate3d( 1, 0, 0, 90deg);
+        border: none;
+    }
+}
+
+@keyframes rotarHaciaAbajo180 {
+    100%{
+        transform: rotate3d( 1, 0, 0, 180deg);
+        border: none;
+    }
+}
+
+@keyframes rotarHaciaAbajo90n {
+    100%{
+        transform: rotate3d( 1, 0, 0, 0deg);
+        border: none;
+    }
+}
+
+@keyframes desaparecer {
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes cuadradoDelMedio {
+    100%{
+        clip-path: polygon(100% 0, 100% 100%, 49% 100%, 0 100%, 0 0);
+        border: none;
+    }
+}
+
+@keyframes cambiarColor {
+    100%{
+        background: #000;
+        border: none;
+    }
+}
