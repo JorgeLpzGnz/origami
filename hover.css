@@ -1,0 +1,219 @@
+:root {
+    -animationDuration: 0.5;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* on hover efect */
+
+ body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.father {
+    width: 188px;
+    height: 225px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.father div {
+    border:  .1px solid #fff;
+}
+
+.d1 {
+    width: 20%;
+    height: 30%;
+    clip-path: polygon(100% 0, 100% 100%, 50% 75%, 0 100%, 0 0);
+    background: #272727;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.1s linear;
+    transition-delay: 0s;
+}
+
+.father:hover .d1{
+    clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
+    background: #000;
+    border: none;
+}
+
+.d2 {
+    height: 30%;
+    width: 40%;
+    position: absolute;
+    background: #000;
+    left: 0;
+    bottom: 0;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 0);
+    transition: all 0.1s linear;
+    transition-delay: 0s;
+}
+
+.father:hover .d2 {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+    border: none;
+    transition-delay: 0.2s;
+}
+
+.d3 {
+    height: 30%;
+    width: 40%;
+    position: absolute;
+    background: #000;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+    transition: all 0.1s linear;
+    transition-delay: 0s;
+}
+
+.father:hover .d3 {
+    transition-delay: 0.2s;
+    clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+    border: none;
+}
+
+.d4 {
+    width: 60%;
+    height: 60%;
+    background: #000;
+    position: absolute;
+    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+    bottom: 30%;
+    transform-style: preserve-3d;
+    transform-origin: center bottom;
+    transform: rotate3d( 1, 0, 0, 100deg );
+    z-index: -1;
+    transition: all 0.1s linear;
+    transition-delay: 0s;
+}
+
+.father:hover .d4 {
+    transform: rotate3d( 1, 0, 0, 0deg);
+    border: none;
+    transition-delay: 0.2s;
+} 
+
+/* cuadrados del medio */
+
+.d5 {
+    height: 30%;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    background: #272727;
+    right: 0;
+    z-index: -1;
+    transform-origin: center bottom;
+    transition: all 0.1s linear;
+    transition-delay: 0.1s;
+}
+
+.father:hover .d5 {
+    transform: rotate3d( 1, 0, 0, 90deg);
+    border: none;
+} 
+
+.d6 {
+    height: 30%;
+    width: 20%;
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    background: #272727;
+    left: 0;
+    z-index: -1;
+    transition: all 1s;
+    animation: delay 1s;
+    transform-origin: center bottom;
+    transition: all 0.1s linear;
+    transition-delay: 0.1s;
+}
+
+.father:hover .d6 {
+    transform: rotate3d( 1, 0, 0, 90deg);
+    border: none;
+}
+
+/* triangulos del medio */
+
+.d6::before {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    clip-path: polygon(0 50%, 0 0, 100% 100%, 0% 100%);
+    transition: all 0.1s linear;
+    transform-origin: center bottom;
+    border: .1px solid #fff;
+    transition-delay: 0.2s;
+}
+
+.d5::before {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    transition: clip-path 1s ;
+    right: 0;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transition: all 0.1s linear;
+    transform-origin: center bottom;
+    border: .1px solid #fff;
+    transition-delay: 0.2s;
+}
+
+/* triangulos superiores */
+
+.d5::after {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    clip-path: polygon(0 50%, 0 0, 100% 100%, 0% 100%);
+    transition: all 0.1s linear;
+    bottom: 100%;
+    right: 0;
+    transform-origin: center bottom;
+    border: .1px solid #fff;
+    transition-delay: 0.2s;
+}
+
+.father:hover .d5::after {
+    transform: rotate3d( 1, 0, 0, 180deg);
+    border: none;
+    transition-delay: 0s;
+} 
+
+.d6::after {
+    content: '';
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    background: #000;
+    transition: clip-path 1s ;
+    bottom: 100%;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transition: all 0.1s linear;
+    transform-origin: center bottom;
+    border: .1px solid #fff;
+    transition-delay: 0.2s;
+}
+
+.father:hover .d6::after {
+    transform: rotate3d( 1, 0, 0, 180deg);
+    border: none;
+    transition-delay: 0s;
+}

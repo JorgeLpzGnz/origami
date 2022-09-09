@@ -7,6 +7,8 @@
     margin: 0;
 }
 
+/* infite loop */
+
 body {
     display: flex;
     align-items: center;
@@ -35,12 +37,9 @@ body {
     position: absolute;
     bottom: 0;
     z-index: 1;
+    animation: desaparecer 2s infinite;
 }
 
-.father:hover .d1{
-    animation: desaparecer 0.1s 1 forwards;
-    animation-delay: 0.4s;
-}
 
 .d2 {
     width: 17%;
@@ -48,11 +47,7 @@ body {
     background: #272727;
     position: absolute;
     bottom: 0;
-}
-
-.father:hover .d2{
-    animation: cambiarColor 0.1s 1 forwards;
-    animation-delay: 0.4s;
+    animation: cambiarColor 2s infinite;
 }
 
 .d2::before {
@@ -64,6 +59,7 @@ body {
     right: 101%;
     clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
     transition: clip-path 1s;
+    animation: transforCournerB 2s infinite;
 }
 
 .d2::after {
@@ -74,17 +70,81 @@ body {
     background: #000;
     left: 101%;
     clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
-    transition: clip-path 1s ;
+    animation: transforCournerA 2s infinite;
 }
 
-.father:hover .d2::before {
-    animation: transforCournerB 1 0.2s forwards;
-    animation-delay: 0.4s;
+
+
+@keyframes transforCournerA {
+
+    0% {
+        clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+        left: 101%;
+    }
+
+    20% {
+        clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+        left: 101%;
+    }
+
+    30% {
+        clip-path: polygon(0 0, 52% 0, 100% 100%, 0% 100%);
+        border: none;
+        left: 100%;
+    }
+
+    50% {
+        clip-path: polygon(0 0, 52% 0, 100% 100%, 0% 100%);
+        border: none;
+        left: 100%;
+    }
+
+    70% {
+        clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+        left: 101%;
+    }
+
+    100% {
+        clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
+        left: 101%;
+    }
+
 }
 
-.father:hover .d2::after {
-    animation: transforCournerA 1 0.2s forwards;
-    animation-delay: 0.4s;
+@keyframes transforCournerB {
+
+    0% {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
+        right: 101%;
+    }
+
+    20% {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
+        right: 101%;
+    }
+
+    30% {
+        clip-path: polygon(48% 0, 100% 0, 100% 100%, 0% 100%);
+        border: none;
+        right: 99.5%;
+    }
+
+    50% {
+        clip-path: polygon(48% 0, 100% 0, 100% 100%, 0% 100%);
+        border: none;
+        right: 99.5%;
+    }
+
+    70% {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
+        right: 101%;
+    }
+
+    100% {
+        clip-path: polygon(55% 0, 100% 0, 100% 100%, 0 0);
+        right: 101%;
+    }
+
 }
 
 .d3 {
@@ -96,13 +156,9 @@ body {
     bottom: 30%;
     transform-style: preserve-3d;
     transform-origin: center bottom;
-    transform: rotate3d( 1, 0, 0, 120deg );
+    transform: rotate3d( 1, 0, 0, 100deg );
     z-index: -1;
-}
-
-.father:hover .d3 {
-    animation: rotarHaciaAbajo90n 1 0.2s forwards;
-    animation-delay: 0.4s;
+    animation: rotarHaciaAbajo90n 2s infinite;
 }
 
 /* triangulos del medio */
@@ -116,12 +172,9 @@ body {
     background: #000;
     clip-path: polygon(0 0, 0 100%, 100% 100%);
     transform-origin: center bottom;
+    animation: rotarHaciaAbajo90 2s infinite;
 }
 
-.father:hover .d4 {
-    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0.2s, 0.4s;
-}
 
 .d6 {
     width: 41.5%;
@@ -132,12 +185,9 @@ body {
     background: #000;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     transform-origin: center bottom;
+    animation: rotarHaciaAbajo90 2s infinite;
 }
 
-.father:hover .d6 {
-    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0.2s, 0.4s;
-}
 
 /* cuadrados del medio */
 
@@ -153,12 +203,9 @@ body {
     transition: all 1s;
     animation: delay 1s;
     transform-origin: center bottom;
+    animation: rotarHaciaAbajo90 2s infinite;
 }
 
-.father:hover .d5 {
-    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0.2s, 0.4s;
-}
 
 .d7 {
     height: 30%;
@@ -170,12 +217,9 @@ body {
     right: 0;
     z-index: -1;
     transform-origin: center bottom;
+    animation: rotarHaciaAbajo90 2s infinite;
 }
 
-.father:hover .d7 {
-    animation: rotarHaciaAbajo90 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0.2s, 0.4s;
-}
 
 /* triangulos superiores */
 
@@ -190,12 +234,10 @@ body {
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     transition: all 0.5s;
     transform-origin: center bottom;
+    border: .1px solid #fff;
+    animation: rotarHaciaAbajo180 2s infinite;
 }
 
-.father:hover .d5::after {
-    animation: rotarHaciaAbajo180 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0s, 0.4s;
-}
 
 .d7::after {
     content: '';
@@ -208,67 +250,53 @@ body {
     bottom: 100%;
     right: 0;
     transform-origin: center bottom;
-}
-
-.father:hover .d7::after {
-    animation: rotarHaciaAbajo180 0.2s forwards, desaparecer 0.2s forwards;
-    animation-delay: 0s, 0.4s;
+    border: .1px solid #fff;
+    animation: rotarHaciaAbajo180 2s infinite;
 }
 
 /* animaciones */
 
-@keyframes transforCournerA {
-    100% {
-        clip-path: polygon(0 0, 52% 0, 100% 100%, 0% 100%);
-        border: none;
-        left: 100%;
-    }
-}
-
-@keyframes transforCournerB {
-    100% {
-        clip-path: polygon(48% 0, 100% 0, 100% 100%, 0% 100%);
-        border: none;
-        right: 99.5%;
-    }
-}
-
 @keyframes rotarHaciaAbajo90 {
-    100%{
+    40%{
         transform: rotate3d( 1, 0, 0, 90deg);
         border: none;
     }
 }
 
 @keyframes rotarHaciaAbajo180 {
-    100%{
+    10%{
+        transform: rotate3d( 1, 0, 0, 180deg);
+        border: none;
+    }
+
+    70%{
         transform: rotate3d( 1, 0, 0, 180deg);
         border: none;
     }
 }
 
 @keyframes rotarHaciaAbajo90n {
-    100%{
+    40%{
         transform: rotate3d( 1, 0, 0, 0deg);
         border: none;
     }
 }
 
 @keyframes desaparecer {
-    100%{
+    40%{
         opacity: 0;
     }
 }
 
 @keyframes cuadradoDelMedio {
-    100%{
+    40%{
         clip-path: polygon(100% 0, 100% 100%, 49% 100%, 0 100%, 0 0);
         border: none;
     }
 }
 
 @keyframes cambiarColor {
-    100%{
+    40%{
         background: #000;
         border: none;
     }
