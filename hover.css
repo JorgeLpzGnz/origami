@@ -15,8 +15,8 @@
     justify-content: center;
     height: 100vh;
 }
-.father {
-    width: 188px;
+.metalorianLogo {
+    width: 270px;
     height: 225px;
     position: relative;
     display: flex;
@@ -24,12 +24,12 @@
     justify-content: center;
 }
 
-.father div {
+.metalorianLogo div {
     border:  .1px solid #fff;
 }
 
 .d1 {
-    width: 20%;
+    width: 14%;
     height: 30%;
     clip-path: polygon(100% 0, 100% 100%, 50% 75%, 0 100%, 0 0);
     background: #272727;
@@ -39,54 +39,62 @@
     transition-delay: 0s;
 }
 
-.father:hover .d1{
+.metalorianLogo:hover .d1{
+    transition-delay: 0.2s;
     clip-path: polygon(100% 0, 100% 100%, 50% 100%, 0 100%, 0 0);
     background: #000;
     border: none;
+    width: 20%;
 }
 
 .d2 {
     height: 30%;
-    width: 40%;
+    width: 30%;
     position: absolute;
     background: #000;
-    left: 0;
+    left: 13%;
     bottom: 0;
     clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 0);
     transition: all 0.1s linear;
     transition-delay: 0s;
 }
 
-.father:hover .d2 {
-    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0% 100%);
+.metalorianLogo:hover .d2 {
+    clip-path: polygon(37.5% 0, 100% 0, 100% 100%, 0% 100%);
     border: none;
     transition-delay: 0.2s;
+    width: 40%;
+    left: 0;
 }
 
 .d3 {
     height: 30%;
-    width: 40%;
+    width: 30%;
     position: absolute;
     background: #000;
-    right: 0;
+    right: 13%;
     bottom: 0;
     clip-path: polygon(0 0, 51% 0, 100% 0, 0% 100%);
     transition: all 0.1s linear;
     transition-delay: 0s;
 }
 
-.father:hover .d3 {
+.metalorianLogo:hover .d3 {
     transition-delay: 0.2s;
-    clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 62.5% 0, 100% 100%, 0% 100%);
     border: none;
+    width: 40%;
+    right: 0;
 }
 
+/* punta del triangulo */
+
 .d4 {
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
     background: #000;
     position: absolute;
-    clip-path: polygon(50% 25%, 0% 100%, 100% 100%);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     bottom: 30%;
     transform-style: preserve-3d;
     transform-origin: center bottom;
@@ -96,7 +104,7 @@
     transition-delay: 0s;
 }
 
-.father:hover .d4 {
+.metalorianLogo:hover .d4 {
     transform: rotate3d( 1, 0, 0, 0deg);
     border: none;
     transition-delay: 0.2s;
@@ -106,31 +114,29 @@
 
 .d5 {
     height: 30%;
-    width: 20%;
+    width: 15%;
     position: absolute;
-    right: 0;
+    right: 13%;
     bottom: 30%;
     background: #272727;
-    right: 0;
     z-index: -1;
     transform-origin: center bottom;
     transition: all 0.1s linear;
     transition-delay: 0.1s;
 }
 
-.father:hover .d5 {
+.metalorianLogo:hover .d5 {
     transform: rotate3d( 1, 0, 0, 90deg);
     border: none;
 } 
 
 .d6 {
     height: 30%;
-    width: 20%;
+    width: 15%;
     position: absolute;
-    right: 0;
+    left: 13%;
     bottom: 30%;
     background: #272727;
-    left: 0;
     z-index: -1;
     transition: all 1s;
     animation: delay 1s;
@@ -139,7 +145,7 @@
     transition-delay: 0.1s;
 }
 
-.father:hover .d6 {
+.metalorianLogo:hover .d6 {
     transform: rotate3d( 1, 0, 0, 90deg);
     border: none;
 }
@@ -191,7 +197,7 @@
     transition-delay: 0.2s;
 }
 
-.father:hover .d5::after {
+.metalorianLogo:hover .d5::after {
     transform: rotate3d( 1, 0, 0, 180deg);
     border: none;
     transition-delay: 0s;
@@ -212,8 +218,17 @@
     transition-delay: 0.2s;
 }
 
-.father:hover .d6::after {
+.metalorianLogo:hover .d6::after {
     transform: rotate3d( 1, 0, 0, 180deg);
     border: none;
     transition-delay: 0s;
+}
+
+.guia {
+    position: absolute;
+    background: red;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    z-index: -1;
 }
